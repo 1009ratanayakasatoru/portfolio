@@ -1,0 +1,75 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.header, .nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header, footer {
+    font-family: 'Merriweather', serif;
+    background: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* ゴールド */
+    transition: color 0.3s ease;
+}
+
+section {
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 800px;
+    background: #ffe4b5; /* ライトオレンジ色 */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section:nth-child(even) {
+    background: #ffdead; /* ナバホホワイト色 */
+}
+
+section:nth-child(odd) {
+    background: #ffe4b5; /* モカ色 */
+}
+
+.job, .school {
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+p, li {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+nav ul li a {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
