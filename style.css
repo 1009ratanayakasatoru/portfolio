@@ -31,6 +31,12 @@ nav ul li {
     margin: 0 1rem;
 }
 
+nav ul li a {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
 nav ul li a:hover {
     color: #FFD700; /* ゴールド */
     transition: color 0.3s ease;
@@ -43,18 +49,44 @@ section {
     background: #ffe4b5; /* ライトオレンジ色 */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 section:nth-child(even) {
     background: #ffdead; /* ナバホホワイト色 */
 }
 
-section:nth-child(odd) {
-    background: #ffe4b5; /* モカ色 */
+section:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.job, .school {
-    margin-bottom: 2rem;
+@media (max-width: 768px) {
+    .header, .nav ul {
+        flex-direction: column;
+    }
+    section {
+        padding: 1rem;
+    }
+}
+
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #FFD700;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header, footer {
+    background: var(--primary-color);
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
 }
 
 h1, h2, h3 {
@@ -62,14 +94,61 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
-p, li {
+p, li, nav ul li a {
     font-family: 'Nunito', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.8;
 }
 
-nav ul li a {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+/* グラデーションカラーのタイトル */
+h1 {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #4CAF50, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+h1:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 105%;
+    height: 110%;
+    background: inherit;
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.5;
+}
+
+/* テキストのシャドウ */
+h1 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* アニメーション */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.4), 0 0 30px rgba(255, 215, 0, 0.3), 0 0 40px rgba(255, 215, 0, 0.2);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.7), 0 0 40px rgba(255, 215, 0, 0.6), 0 0 50px rgba(255, 215, 0, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.4), 0 0 30px rgba(255, 215, 0, 0.3), 0 0 40px rgba(255, 215, 0, 0.2);
+    }
+}
+
+h1 {
+    animation: glow 1.5s infinite alternate;
+}
+
+h1 span.name {
+    background: none;
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: #000080;
 }
